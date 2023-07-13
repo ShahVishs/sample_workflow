@@ -3,7 +3,7 @@ name: Ai-service Backend
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   build-and-test:
