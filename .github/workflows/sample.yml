@@ -1,65 +1,3 @@
-# name: Python Backend CI
-
-# on:
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-#   build-and-test:
-#     runs-on: windows-latest
-
-#     steps:
-#       - name: string
-#         run: echo "welcome to Backend"
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-
-#       - name: Set up Python
-#         uses: actions/setup-python@v2
-#         with:
-#           python-version: 3.9
-
-#       - name: Install dependencies
-#         run: pip install -r requirements.txt
-
-#       - name: Run linters
-#         run: |
-#           # Run your linters here
-#           # Example: flake8 .
-
-#       - name: Run tests
-#         run: |
-#           # Run your tests here
-#           # Example: pytest
-
-#       - name: Upload test coverage
-#         uses: actions/upload-artifact@v2
-#         with:
-#           name: coverage
-#           path: coverage/
-
-#   deploy:
-#     needs: build-and-test
-#     runs-on: windows-latest
-#     if: github.ref == 'refs/heads/main'
-
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-
-#       - name: Set up Python
-#         uses: actions/setup-python@v2
-#         with:
-#           python-version: 3.9
-
-#       - name: Install dependencies
-#         run: pip install -r requirements.txt
-
-#       - name: Deploy to server
-#         run: |
-#           # Add your deployment steps here
-#           # Example: ssh user@server 'cd /path/to/app && git pull && restart-app'
 name: Ai-service Backend
 
 on:
@@ -72,6 +10,8 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: string
+        run: echo "welcome to Backend"
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -104,9 +44,72 @@ jobs:
     runs-on: windows-latest
     if: github.ref == 'refs/heads/main'
 
-  steps:
+    steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
+          with:
           repository: FunnelAI/ai-service-api
           token: ${{ secrets.GITHUB_TOKEN }}
+
+#       - name: Set up Python
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: 3.9
+
+#       - name: Install dependencies
+#         run: pip install -r requirements.txt
+
+#       - name: Deploy to server
+#         run: |
+#           # Add your deployment steps here
+#           # Example: ssh user@server 'cd /path/to/app && git pull && restart-app'
+# name: Ai-service Backend
+
+# on:
+#   push:
+#     branches:
+#       - develop
+
+# jobs:
+#   build-and-test:
+#     runs-on: windows-latest
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Set up Python
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: 3.9
+
+#       - name: Install dependencies
+#         run: pip install -r requirements.txt
+
+#       - name: Run linters
+#         run: |
+#           # Run your linters here
+#           # Example: flake8 .
+
+#       - name: Run tests
+#         run: |
+#           # Run your tests here
+#           # Example: pytest
+
+#       - name: Upload test coverage
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: coverage
+#           path: coverage/
+
+#   deploy:
+#     needs: build-and-test
+#     runs-on: windows-latest
+#     if: github.ref == 'refs/heads/main'
+
+#   steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+#         with:
+#           repository: FunnelAI/ai-service-api
+#           token: ${{ secrets.GITHUB_TOKEN }}
