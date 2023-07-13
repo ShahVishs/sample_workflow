@@ -47,7 +47,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-          with:
+        with:
           repository: FunnelAI/ai-service-api
           token: ${{ secrets.GITHUB_TOKEN }}
 
