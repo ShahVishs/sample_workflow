@@ -1,4 +1,4 @@
-name: Ai-service Backend
+name: AI Service API Workflow
 
 on:
   push:
@@ -39,17 +39,17 @@ jobs:
           name: coverage
           path: coverage/
 
-  deploy:
-    needs: build-and-test
-    runs-on: windows-latest
-    if: github.ref == 'refs/heads/main'
+  # deploy:
+  #   needs: build-and-test
+  #   runs-on: windows-latest
+  #   if: github.ref == 'refs/heads/main'
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          repository: FunnelAI/ai-service-api
-          token: ${{ secrets.GITHUB_TOKEN }}
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+  #       with:
+  #         repository: FunnelAI/ai-service-api
+  #         token: ${{ secrets.GITHUB_TOKEN }}
 
 #       - name: Set up Python
 #         uses: actions/setup-python@v2
