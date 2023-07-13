@@ -21,17 +21,17 @@ jobs:
           python-version: 3.9
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install flake8 pytest
 
       - name: Run linters
         run: |
-          # Run your linters here
-          # Example: flake8 .
+          flake8 .
 
       - name: Run tests
         run: |
-          # Run your tests here
-          # Example: pytest
+          pytest
 
       - name: Upload test coverage
         uses: actions/upload-artifact@v2
