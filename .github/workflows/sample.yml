@@ -105,8 +105,8 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
   steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        repository: FunnelAI/ai-service-api
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          repository: FunnelAI/ai-service-api
+          token: ${{ secrets.GITHUB_TOKEN }}
